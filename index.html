@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Example</title>
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body class="bg-black text-black fw-semibold">
+    <div class="container">
+      <div class="w-75 mx-auto py-5">
+        <h1 class="mb-5">Product Management System</h1>
+        <div class="form-group mb-3">
+          <label for="ProductName" class="mb-2">ProductName</label>
+          <input
+            type="text"
+            id="ProductName"
+            class="form-control"
+            placeholder="Enter Name"
+          />
+          <p id="invalidInput" class="text-danger d-none">Invalid Input</p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="ProductPrice" class="mb-2">ProductPrice</label>
+          <input
+            type="number"
+            id="ProductPrice"
+            class="form-control"
+            placeholder="Add Price"
+          />
+          <p id="invalidPrice" class="text-danger d-none">
+            Range of Price 1000-10000
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="ProductModel" class="mb-2">ProductModel</label>
+          <input
+            type="text"
+            id="ProductModel"
+            class="form-control"
+            placeholder="Add Model"
+          />
+          <p id="invalidModel" class="text-danger d-none">
+            TV and Mobile Only are allowed
+          </p>
+        </div>
+        <div class="form-group mb-3">
+          <label for="ProductDesc" class="mb-2">ProductDesc</label>
+          <textarea
+            name="ProductDesc"
+            id="ProductDesc"
+            class="form-control"
+            placeholder="Write a Description"
+          ></textarea>
+          <p id="invalidDesc" class="text-danger d-none">
+            Write More than 20 Character
+          </p>
+        </div>
+        <button
+          id="addProductBtn"
+          onclick="addProduct()"
+          class="btn btn-primary btn-sm"
+        >
+          Add Product
+        </button>
+        <button
+          id="updateProductBtn"
+          onclick=" updateProduct()"
+          class="btn btn-warning btn-sm d-none"
+        >
+          Update Product
+        </button>
+      </div>
+      <div class="w-75 mx-auto">
+        <h4>Search</h4>
+        <input
+          oninput="searchProductName(this.value)"
+          type="text"
+          class="form-control"
+          placeholder="Search Product Name"
+        />
+      </div>
+      <table class="table w-75 mx-auto text-center">
+        <thead>
+          <th>Index</th>
+          <th>ProductName</th>
+          <th>ProductPrice</th>
+          <th>ProductModel</th>
+          <th>ProductDesc</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="tBody"></tbody>
+      </table>
+    </div>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
